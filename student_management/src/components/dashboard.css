@@ -1,0 +1,22 @@
+.text-center {
+  text-align: center !important;
+}
+
+.d-flex.align-items-center {
+  display: flex;
+  justify-content: center;
+}
+
+.hover-effect {
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-effect:hover {
+  background-color: rgba(255, 255, 255, 0.1); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+}
+
+.hover-effect:hover {
+  border-left: 3px solid #00bfff;
+  color: #00bfff;
+}
