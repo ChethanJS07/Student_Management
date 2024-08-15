@@ -1,9 +1,23 @@
 import React from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "./dashboard.css";
+import axios from 'axios'
+
 
 const Dashboard = () => {
+  const navigate = useNavigate();
+  axios.defaults.withCredentials = true
+  const handleLogout = () => {
+    axios.get('http://localhost:3000/auth/logout')
+    .then(result => {
+      if(result.data.Status){
+        localStorage.removeItem("valid")
+        navigate('/')
+      }
+    })
+  }
+
   return (
     <div className="container-fluid">
       <div className="row flex-nowrap">
@@ -57,7 +71,7 @@ const Dashboard = () => {
                   <span className="d-none d-sm-inline">Profile</span>
                 </Link>
               </li>
-              <li className="w-100 mt-auto">
+              <li className="w-100 mt-auto" onClick={handleLogout}>
                 <Link
                   className="nav-link text-white px-3 py-2 rounded hover-effect"
                 >
