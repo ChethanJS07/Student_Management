@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import './login.css';
+import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 
-const Login = () => {
+const StudentLogin = () => {
+
   const [values, setValues] = useState({
     email: '',
     password: ''
@@ -37,11 +37,11 @@ const Login = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (validate()) {
-      axios.post('http://localhost:3000/auth/adminlogin', values)
+      axios.post('http://localhost:3000/student/studentlogin', values)
       .then(result => {
         if (result.data.loginStatus) {
           localStorage.setItem("valid", true)
-          navigate('/dashboard');
+          navigate('/studentDetail/'+result.data.id);
         } else {
           setError(result.data.Error);
         }
@@ -53,7 +53,7 @@ const Login = () => {
   return (
     <div className='d-flex justify-content-center align-items-center vh-100 loginPage'>
       <div className='p-3 rounded w-25 border loginForm'>
-        <h2>Admin Login</h2>
+        <h2>Student Login</h2>
         <form onSubmit={handleSubmit}>
           <div className='mb-3'>
             <label htmlFor="email"><strong>Email:</strong></label>
@@ -88,7 +88,7 @@ const Login = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Login;
+export default StudentLogin

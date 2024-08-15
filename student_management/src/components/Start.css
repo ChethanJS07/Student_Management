@@ -1,0 +1,55 @@
+.loginPage {
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.5), 
+    rgba(0, 0, 0, 0.5)
+  ), url('../../images/school-management.jpg') center center / cover no-repeat;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginForm {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.loginForm h2, .loginForm h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.btn-gradient-primary {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  border: none;
+  color: #fff;
+  transition: transform 0.2s ease-in-out, background 0.3s ease;
+}
+
+.btn-gradient-success {
+  background: linear-gradient(135deg, #43e97b, #38f9d7);
+  border: none;
+  color: #fff;
+  transition: transform 0.2s ease-in-out, background 0.3s ease;
+}
+
+
+.btn-gradient-primary:hover, .btn-gradient-success:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, #5b0fbb, #1a62e8);
+}
+
+.btn-gradient-success:hover {
+  background: linear-gradient(135deg, #3adf72, #30e8c1);
+}
+
+.w-45 {
+  width: 45%;
+}
+
+.p-4 {
+  padding: 2rem;
+}

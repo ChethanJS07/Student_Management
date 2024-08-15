@@ -1,5 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
+
 
 const Home = () => {
   const [adminTotal, setAdminTotal] = useState()
@@ -100,14 +102,14 @@ const Home = () => {
                 <tr>
                   <td>{a.email}</td>
                   <td>
-                  <button
+                  <Link
                     className="btn btn-info btn-sm me-2">
                     Edit
-                  </button>
-                  <button
+                  </Link>
+                  <Link
                     className="btn btn-warning btn-sm" >
                     Delete
-                  </button>
+                  </Link>
                   </td>
                 </tr>
               ))

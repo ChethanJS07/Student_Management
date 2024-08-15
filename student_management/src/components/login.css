@@ -61,6 +61,14 @@ input[type="password"]:focus {
   box-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
 }
 
+.d-flex {
+  display: flex;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
 button {
   background: linear-gradient(to right, #56ab2f, #a8e063);
   border: none;
@@ -70,7 +78,9 @@ button {
   color: #fff;
   cursor: pointer;
   transition: background 0.3s ease-in-out, transform 0.2s ease;
-  margin-bottom: 1rem; 
+  margin-bottom: 1rem;
+  width: auto;  /* Ensure the button does not stretch */
+  text-align: center;  /* Center the text inside the button */
 }
 
 button:hover {
