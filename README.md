@@ -1,6 +1,6 @@
 # Student Database Management
 
-Expense Tracker is a web application designed to help users manage their income and expenses. The application allows users to add, view, and delete expenses and incomes, providing a graphical representation of their financial data.
+A Project Using ReactJs, NodeJs ExpressJs and MySQL
 
 ## Table of Contents
 
@@ -66,7 +66,7 @@ To run this project locally, follow these steps:
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/ChethanJS07/ExpenseTracker.git
+    git clone https://github.com/ChethanJS07/Student_Management.git
     cd student_management
     ```
 
