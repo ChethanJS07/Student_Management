@@ -113,4 +113,49 @@ router.put("/editStudent/:id", (req, res) => {
   });
 });
 
+router.get('/adminCount',(req,res) => {
+  const sql = 'SELECT count(id) AS admin FROM admin';
+  con.query(sql, (err, result) => {
+    if (err) {
+      return res.json({ Status: false, Error: "Query Error"+err });
+    }
+    return res.json({ Status: true, Result: result });
+  });
+});
+
+router.get('/studentCount',(req,res) => {
+  const sql = 'SELECT count(id) AS student FROM student';
+  con.query(sql, (err, result) => {
+    if (err) {
+      return res.json({ Status: false, Error: "Query Error"+err });
+    }
+    return res.json({ Status: true, Result: result });
+  });
+});
+
+router.get('/deptCount',(req,res) => {
+  const sql = 'SELECT count(id) AS department FROM category';
+  con.query(sql, (err, result) => {
+    if (err) {
+      return res.json({ Status: false, Error: "Query Error"+err });
+    }
+    return res.json({ Status: true, Result: result });
+  });
+});
+
+router.get('/adminRecords', (req,res) => {
+  const sql = 'SELECT * FROM admin';
+  con.query(sql, (err, result) => {
+    if (err) {
+      return res.json({ Status: false, Error: "Query Error"+err });
+    }
+    return res.json({ Status: true, Result: result });
+  });
+})
+
+router.get('/logout',(req,res) => {
+  res.clearCookie('token');
+  return res.json({Status: true})
+})
+
 export { router as adminRouter };
